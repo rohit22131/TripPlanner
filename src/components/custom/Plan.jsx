@@ -8,27 +8,27 @@ const Plan = () => {
       <div className="grid grid-cols-2 grid-rows-6 h-[80vh]">
         <img
           className="row-span-3 object-cover w-full h-full p-2"
-          src="/background.jpg"
+          src="/travel1.jpg"
           alt="/"
         />
         <img
           className="row-span-2 object-cover w-full h-full p-2"
-          src="/background2.jpg"
+          src="/travel2.jpg"
           alt="/"
         />
         <img
           className="row-span-2 object-cover w-full h-full p-2"
-          src="/background3.jpg"
+          src="/travel3.jpg"
           alt="/"
         />
         <img
           className="row-span-3 object-cover w-full h-full p-2"
-          src="/background5.jpg"
+          src="/travel4.jpg"
           alt="/"
         />
         <img
           className="row-span-2 object-cover w-full h-full p-2"
-          src="/background6.jpg"
+          src="/travel5.jpg"
           alt="/"
         />
       </div>
