@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Hotels({ trip }) {
-  const [photos, setPhotos] = useState({}); 
+  const [photos, setPhotos] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,8 +14,10 @@ function Hotels({ trip }) {
     const fetchPhotosForHotels = async () => {
       setLoading(true);
       try {
-        const hotelNames = trip?.tripData?.hotel_options.map(hotel => hotel.name);
-        const photoRequests = hotelNames.map(name =>
+        const hotelNames = trip?.tripData?.hotel_options.map(
+          (hotel) => hotel.name
+        );
+        const photoRequests = hotelNames.map((name) =>
           axios.get(UNSPLASH_API_URL, {
             params: {
               query: name,
@@ -24,10 +26,10 @@ function Hotels({ trip }) {
             },
           })
         );
-        
+
         const responses = await Promise.all(photoRequests);
         const hotelPhotos = {};
-        
+
         responses.forEach((response, index) => {
           const hotelName = hotelNames[index];
           hotelPhotos[hotelName] = response.data.results;
@@ -47,7 +49,8 @@ function Hotels({ trip }) {
   }, [trip?.tripData?.hotel_options]);
 
   if (loading) return <p className="text-center text-lg">Loading...</p>;
-  if (error) return <p className="text-center text-lg text-red-500">Error: {error}</p>;
+  if (error)
+    return <p className="text-center text-lg text-red-500">Error: {error}</p>;
 
   return (
     <div className="mt-20">
@@ -57,7 +60,7 @@ function Hotels({ trip }) {
           <Link
             key={hotel.name}
             to={`https://www.google.com/maps/search/?api=1&query=${hotel.name},${hotel.address}`}
-            target="_blank" 
+            target="_blank"
           >
             <div className="mt-7 hover:scale-105 transition-all cursor-pointer">
               {photos[hotel.name] && photos[hotel.name].length > 0 && (

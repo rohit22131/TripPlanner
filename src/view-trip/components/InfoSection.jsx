@@ -1,14 +1,13 @@
-import { Button } from '@/components/ui/button'
-import React, { useState, useEffect } from 'react'
+import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from "react";
 import { IoMdSend } from "react-icons/io";
-import axios from 'axios';
+import axios from "axios";
 
 function InfoSection({ trip }) {
   const [photos, setPhotos] = useState([]); // Store array of photos
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const photoApi = import.meta.env.VITE_UNSPLASH_API_KEY
+  const photoApi = import.meta.env.VITE_UNSPLASH_API_KEY;
   const UNSPLASH_API_URL = `https://api.unsplash.com/search/photos`;
 
   useEffect(() => {
@@ -19,7 +18,7 @@ function InfoSection({ trip }) {
           params: {
             query: trip?.userSelection?.location,
             client_id: photoApi,
-            per_page: 1, 
+            per_page: 1,
           },
         });
         setPhotos(response.data.results);
@@ -36,7 +35,8 @@ function InfoSection({ trip }) {
   }, [trip?.userSelection?.location]);
 
   if (loading) return <p className="text-center text-lg">Loading...</p>;
-  if (error) return <p className="text-center text-lg text-red-500">Error: {error}</p>;
+  if (error)
+    return <p className="text-center text-lg text-red-500">Error: {error}</p>;
 
   return (
     <div className="space-y-4">
@@ -47,7 +47,7 @@ function InfoSection({ trip }) {
               <img
                 src={photo.urls.small}
                 alt={photo.alt_description}
-                className='h-[340px] w-full object-cover rounded-xl'
+                className="h-[340px] w-full object-cover rounded-xl"
               />
             </div>
           ))}
@@ -57,7 +57,9 @@ function InfoSection({ trip }) {
       <div className="flex justify-between items-center mt-4">
         <div>
           <div className="my-5 flex flex-col gap-2">
-            <h2 className="font-bold text-2xl">{trip?.userSelection?.location}</h2>
+            <h2 className="font-bold text-2xl">
+              {trip?.userSelection?.location}
+            </h2>
           </div>
           <div className="flex gap-5">
             <h2 className="p-1 px-3 rounded-full bg-gray-200 text-gray-600 text-xs md:text-md">
