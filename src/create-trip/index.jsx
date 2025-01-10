@@ -8,15 +8,12 @@ import {
 } from "@/constants/options";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import { chatSession } from "@/service/AiModel";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios, { Axios } from "axios";
@@ -27,8 +24,6 @@ import { useNavigate } from "react-router-dom";
 import Footer from "@/components/custom/Footer";
 
 function CreateTrip() {
-  const [place, setPlace] = useState();
-
   const [formData, setFormData] = useState([]);
 
   const [openDailog, setOpenDailog] = useState(false);

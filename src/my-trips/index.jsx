@@ -4,7 +4,7 @@ import { useNavigation } from "react-router-dom";
 import UserTripCardItem from "./components/userTripCardItem";
 import { db } from "@/service/FirebaseConfig";
 import { where, getDocs } from "firebase/firestore";
-import Footer from "@/components/custom/Footer";
+import Footer from "@/components/custom/Footer.jsx";
 
 function MyTrips() {
   const [userTrips, setUserTrips] = useState([]);
