@@ -56,7 +56,7 @@ function Header() {
       <div>
         {user ? (
           <div className="flex gap-3">
-            <a href="./create-trip">
+            <a href="/create-trip">
               <Button
                 variant="outline"
                 className="rounded-full bg-transparent border-black hover:bg-red-700 hover:border-red-700 hover:text-white transition-all"
@@ -65,7 +65,7 @@ function Header() {
               </Button>
             </a>
 
-            <a href="./my-trips">
+            <a href="/my-trips">
               <Button
                 variant="outline"
                 className="rounded-full bg-transparent border-black hover:bg-red-700 hover:border-red-700 hover:text-white transition"
