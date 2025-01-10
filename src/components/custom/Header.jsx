@@ -55,11 +55,11 @@ function Header() {
       </a>
       <div>
         {user ? (
-          <div className="flex gap-3">
+          <div className="flex justify-center items-center gap-2">
             <a href="/create-trip">
               <Button
                 variant="outline"
-                className="rounded-full bg-transparent border-black hover:bg-red-700 hover:border-red-700 hover:text-white transition-all"
+                className=" h-[35px] w-[100px] rounded-full bg-transparent border-black hover:bg-red-700 hover:border-red-700 hover:text-white transition-all"
               >
                 + Create Trip
               </Button>
@@ -68,14 +68,14 @@ function Header() {
             <a href="/my-trips">
               <Button
                 variant="outline"
-                className="rounded-full bg-transparent border-black hover:bg-red-700 hover:border-red-700 hover:text-white transition"
+                className="h-[35px] w-[80px] rounded-full bg-transparent border-black hover:bg-red-700 hover:border-red-700 hover:text-white transition"
               >
                 My Trips
               </Button>
             </a>
             <Popover>
               <PopoverTrigger>
-                <img
+              <img
                   src={user?.picture}
                   className="lg:h-[37px] lg:w-[37px] sm:h-[30px] sm:[30px] rounded-full"
                 />
