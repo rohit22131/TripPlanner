@@ -1,7 +1,7 @@
 import { collection, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useNavigation } from "react-router-dom";
-import UserTripCardItem from "./components/userTripCardItem";
+import UserTripCardItem from "./components/UserTripCardItem.jsx";
 import { db } from "@/service/FirebaseConfig";
 import { where, getDocs } from "firebase/firestore";
 import Footer from "@/components/custom/Footer.jsx";
