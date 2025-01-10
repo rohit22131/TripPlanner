@@ -43,12 +43,12 @@ const Plan = () => {
           journey unforgettable!
         </p>
         <div className="flex justify-center mt-3">
-          <a href="/create-trip">
+          <a href="/my-trips">
             <Button
               variant="outline"
               className="border-black rounded-full hover:bg-red-700 hover:text-white hover:border-red-700"
             >
-              Plan Your Trip
+              My Trips
             </Button>
           </a>
         </div>
